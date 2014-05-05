@@ -21,6 +21,10 @@ class IPhoto(form.Schema):
 
     #form.model("models/photo.xml")
 
+    id = schema.TextLine(
+        title=_(u"Image ID"),
+    )
+
     title = schema.TextLine(
         title=_(u"Title"),
         required=False,
@@ -31,8 +35,68 @@ class IPhoto(form.Schema):
         title=_(u"Photo"),
     )
 
-    reference = RichText(
-        title=_(u"Reference"),
+    collection = schema.TextLine(
+        title=_(u"Collection"),
+        required=False,
+    )
+
+    location = schema.TextLine(
+        title=_(u"Location"),
+        required=False,
+    )
+
+    year = schema.TextLine(
+        title=_(u"Year"),
+        required=False,
+    )
+
+    date = schema.TextLine(
+        title=_(u"Date"),
+        required=False,
+    )
+
+    estimated = schema.TextLine(
+        title=_(u"Estimated Date"),
+        required=False,
+    )
+
+    photographer = schema.TextLine(
+        title=_(u"Photographer"),
+        required=False,
+    )
+
+    caption = schema.TextLine(
+        title=_(u"Caption on Original Image"),
+        required=False,
+    )
+
+    album = schema.TextLine(
+        title=_(u"Caption in Album or on Mount"),
+        required=False,
+    )
+
+    color = schema.TextLine(
+        title=_(u"Image type"),
+        required=False,
+    )
+
+    material = schema.TextLine(
+        title=_(u"Material Form of Image"),
+        required=False,
+    )
+
+    notes = schema.Text(
+        title=_(u"Notes"),
+        required=False,
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False,
+    )
+
+    ref_text = RichText(
+        title=_(u"HPC Reference"),
         required=False,
     )
 

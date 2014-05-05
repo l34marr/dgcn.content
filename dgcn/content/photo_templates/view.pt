@@ -10,10 +10,8 @@
 <metal:content-core fill-slot="content-core">
   <metal:block define-macro="content-core">
 
-<div tal:condition="context/reference">
-  <label i18n:translate="">Reference</label>:
-  <span tal:replace="structure context/reference/output" />
-</div>
+<fieldset>
+<legend i18n:translate="">image</legend>
 <div tal:define="size context/image/getSize;
                  scale context/@@images;
                  img_tag python:scale.scale('image', scale='preview').tag()"
@@ -32,8 +30,69 @@
       File size
     </span>KB
   </span>
-
 </div>
+</fieldset>
+<fieldset>
+<legend i18n:translate="">Description</legend>
+<div tal:condition="context/id">
+  <label style="color: black; font-size: 120%">Image ID</label>:
+  <span tal:replace="context/id" />
+</div>
+<div tal:condition="context/title">
+  <label i18n:translate="">Title</label>:
+  <span tal:replace="context/title" />
+</div>
+<div tal:condition="context/collection">
+  <label i18n:translate="">Collection</label>:
+  <span tal:replace="context/collection" />
+</div>
+<div tal:condition="context/location">
+  <label i18n:translate="">Location</label>:
+  <span tal:replace="context/location" />
+</div>
+<div tal:condition="context/year">
+  <label i18n:translate="">Year</label>:
+  <span tal:replace="context/year" />
+</div>
+<div tal:condition="context/date">
+  <label i18n:translate="">Date</label>:
+  <span tal:replace="context/date" />
+</div>
+<div tal:condition="context/photographer">
+  <label i18n:translate="">Photographer</label>:
+  <span tal:replace="context/photographer" />
+</div>
+<div tal:condition="context/caption">
+  <label i18n:translate="">Caption on Original Image</label>:
+  <span tal:replace="context/caption" />
+</div>
+<div tal:condition="context/album">
+  <label i18n:translate="">Caption in Album or on Mount</label>:
+  <span tal:replace="context/album" />
+</div>
+<div tal:condition="context/color">
+  <label i18n:translate="">Image type</label>:
+  <span tal:replace="context/color" />
+</div>
+<div tal:condition="context/material">
+  <label i18n:translate="">Material Form of Image</label>:
+  <span tal:replace="context/material" />
+</div>
+<div tal:condition="context/notes">
+  <label i18n:translate="">Notes</label>:
+  <span tal:replace="context/notes" />
+</div>
+<div tal:condition="context/url">
+  <label i18n:translate="">URL</label>:
+  <span tal:replace="context/url" />
+</div>
+<div tal:condition="context/ref_text">
+  <label i18n:translate="">HPC Reference</label>:
+  <span tal:replace="structure context/ref_text/output" />
+</div>
+</fieldset>
+
+
 
   </metal:block>
 </metal:content-core>

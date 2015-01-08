@@ -32,23 +32,36 @@
   </span>
 </div>
 </fieldset>
+
 <fieldset>
 <legend i18n:translate="">Description</legend>
-<div tal:condition="context/id">
-  <label style="color: black; font-size: 120%">Image ID</label>:
+<div>
+  <label style="font-size: 120%">Image ID</label>:
   <span tal:replace="context/id" />
+  <tal:vcea condition="context/id_vcea">
+  <label style="font-size: 120%">ID at vcea.net</label>:
+  <span tal:replace="context/id_vcea" />
+  </tal:vcea>
+  <tal:ref condition="context/id_ref">
+  <label style="font-size: 120%">Identifier</label>:
+  <span tal:replace="context/id_ref" />
+  </tal:ref>
 </div>
 <div tal:condition="context/title">
   <label i18n:translate="">Title</label>:
   <span tal:replace="context/title" />
 </div>
+<div tal:condition="context/description">
+  <label i18n:translate="">Description</label>:
+  <span tal:replace="context/description" />
+</div>
 <div tal:condition="context/collection">
   <label i18n:translate="">Collection</label>:
   <span tal:replace="context/collection" />
 </div>
-<div tal:condition="context/location">
-  <label i18n:translate="">Location</label>:
-  <span tal:replace="context/location" />
+<div tal:condition="context/coverage">
+  <label i18n:translate="">Coverage</label>:
+  <span tal:replace="context/coverage" />
 </div>
 <div tal:condition="context/year">
   <label i18n:translate="">Year</label>:
@@ -58,29 +71,37 @@
   <label i18n:translate="">Date</label>:
   <span tal:replace="context/date" />
 </div>
+<div tal:condition="context/estimated">
+  <label i18n:translate="">Estimated Date</label>:
+  <span tal:replace="context/estimated" />
+</div>
 <div tal:condition="context/photographer">
   <label i18n:translate="">Photographer</label>:
   <span tal:replace="context/photographer" />
 </div>
 <div tal:condition="context/caption">
-  <label i18n:translate="">Caption on Original Image</label>:
+  <label i18n:translate="">Caption</label>:
   <span tal:replace="context/caption" />
 </div>
-<div tal:condition="context/album">
+<div tal:condition="context/cap_abm">
   <label i18n:translate="">Caption in Album or on Mount</label>:
-  <span tal:replace="context/album" />
+  <span tal:replace="context/cap_abm" />
 </div>
-<div tal:condition="context/color">
-  <label i18n:translate="">Image type</label>:
-  <span tal:replace="context/color" />
+<div tal:condition="context/cap_img">
+  <label i18n:translate="">Caption on Original Image</label>:
+  <span tal:replace="context/cap_img" />
+</div>
+<div tal:condition="context/frmt_orig">
+  <label i18n:translate="">Original Format</label>:
+  <span tal:replace="context/frmt_orig" />
 </div>
 <div tal:condition="context/material">
   <label i18n:translate="">Material Form of Image</label>:
   <span tal:replace="context/material" />
 </div>
-<div tal:condition="context/notes">
-  <label i18n:translate="">Notes</label>:
-  <span tal:replace="context/notes" />
+<div tal:condition="context/note">
+  <label i18n:translate="">Note</label>:
+  <span tal:replace="context/note" />
 </div>
 <div tal:condition="context/url">
   <label i18n:translate="">URL</label>:
@@ -91,8 +112,6 @@
   <span tal:replace="structure context/ref_text/output" />
 </div>
 </fieldset>
-
-
 
   </metal:block>
 </metal:content-core>

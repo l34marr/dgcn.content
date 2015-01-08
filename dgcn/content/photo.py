@@ -25,14 +25,35 @@ class IPhoto(form.Schema):
         title=_(u"Image ID"),
     )
 
+    id_vcea = schema.TextLine(
+        title=_(u"ID at vcea.net"),
+        required=False,
+    )
+
+    id_ref = schema.TextLine(
+        title=_(u"Identifier"),
+        required=False,
+    )
+
     title = schema.TextLine(
         title=_(u"Title"),
+        required=False,
+    )
+
+    title_alt = schema.TextLine(
+        title=_(u"Alternative Title"),
+        required=False,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
         required=False,
     )
 
     form.primary('image')
     image = NamedBlobImage(
         title=_(u"Photo"),
+        required=False,
     )
 
     collection = schema.TextLine(
@@ -40,8 +61,8 @@ class IPhoto(form.Schema):
         required=False,
     )
 
-    location = schema.TextLine(
-        title=_(u"Location"),
+    coverage = schema.TextLine(
+        title=_(u"Coverage"),
         required=False,
     )
 
@@ -66,17 +87,22 @@ class IPhoto(form.Schema):
     )
 
     caption = schema.TextLine(
-        title=_(u"Caption on Original Image"),
+        title=_(u"Caption"),
         required=False,
     )
 
-    album = schema.TextLine(
+    cap_abm = schema.TextLine(
         title=_(u"Caption in Album or on Mount"),
         required=False,
     )
 
-    color = schema.TextLine(
-        title=_(u"Image type"),
+    cap_img = schema.TextLine(
+        title=_(u"Caption on Original Image"),
+        required=False,
+    )
+
+    frmt_orig = schema.TextLine(
+        title=_(u"Original Format"),
         required=False,
     )
 
@@ -85,8 +111,8 @@ class IPhoto(form.Schema):
         required=False,
     )
 
-    notes = schema.Text(
-        title=_(u"Notes"),
+    note = schema.Text(
+        title=_(u"Note"),
         required=False,
     )
 

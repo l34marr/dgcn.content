@@ -31,7 +31,7 @@ class IPhoto(form.Schema):
     )
 
     id_ref = schema.TextLine(
-        title=_(u"Identifier"),
+        title=_(u"HPC Reference"),
         required=False,
     )
 
@@ -118,11 +118,6 @@ class IPhoto(form.Schema):
 
     url = schema.TextLine(
         title=_(u"URL"),
-        required=False,
-    )
-
-    ref_text = RichText(
-        title=_(u"HPC Reference"),
         required=False,
     )
 

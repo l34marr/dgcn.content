@@ -43,7 +43,7 @@
   <span tal:replace="context/id_vcea" />
   </tal:vcea>
   <tal:ref condition="context/id_ref">
-  <label style="font-size: 120%">Identifier</label>:
+  <label style="font-size: 120%">HPC Reference</label>:
   <span tal:replace="context/id_ref" />
   </tal:ref>
 </div>
@@ -105,11 +105,9 @@
 </div>
 <div tal:condition="context/url">
   <label i18n:translate="">URL</label>:
-  <span tal:replace="context/url" />
-</div>
-<div tal:condition="context/ref_text">
-  <label i18n:translate="">HPC Reference</label>:
-  <span tal:replace="structure context/ref_text/output" />
+  <a href="#"
+   tal:attributes="href context/url; target string:_blank"
+   tal:content="context/url">remote url</a>
 </div>
 </fieldset>
 

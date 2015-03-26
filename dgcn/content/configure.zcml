@@ -10,6 +10,7 @@
   <includeDependencies package="." />
 
   <!-- Include files and packages -->
+  <include file="implements.zcml" />
   <include package=".behaviors" />
 
   <!-- Grok the package to initialize schema interfaces and content classes -->

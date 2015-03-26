@@ -5,6 +5,7 @@ from plone.dexterity.content import Item
 from zope import schema
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
+from datetime import datetime
 
 from dgcn.content import MessageFactory as _
 
@@ -129,7 +130,18 @@ class IPhoto(form.Schema):
 class Photo(Item):
     grok.implements(IPhoto)
 
-    # Add your class methods and properties here
+    @property
+    def startDate(self):
+        if hasattr(self, 'year') and hasattr(self, 'date'):
+            return datetime(2015, 3, 20, 9, 0)
+        if hasattr(self, 'year'):
+            return datetime(2015, 3, 20, 9, 0)
+        else:
+            return None
+
+    @property
+    def endDate(self):
+        return self.startDate
 
 
 # View class

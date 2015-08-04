@@ -6,6 +6,7 @@ from zope import schema
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from datetime import datetime
+from plone.indexer import indexer
 
 from dgcn.content import MessageFactory as _
 
@@ -132,10 +133,16 @@ class Photo(Item):
 
     @property
     def startDate(self):
-        if hasattr(self, 'year') and hasattr(self, 'date'):
-            return datetime(2015, 3, 20, 9, 0)
-        if hasattr(self, 'year'):
-            return datetime(2015, 3, 20, 9, 0)
+        try:
+            year = int(getattr(self, 'year'))
+        except:
+            return None
+        if year > 1800 and year < 2000:
+            try:
+                date = datetime.utcnow().replace(year=year)
+            except:
+                return None
+            return date
         else:
             return None
 
@@ -143,6 +150,14 @@ class Photo(Item):
     def endDate(self):
         return self.startDate
 
+@indexer(IPhoto)
+def yearIndexer(obj):
+    try:
+        return int(obj.year)
+    except:
+        return None
+
+grok.global_adapter(yearIndexer, name="yearHist")
 
 # View class
 # The view will automatically use a similarly named template in

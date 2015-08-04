@@ -20,7 +20,10 @@
   <img tal:replace="structure img_tag" />
   <br />
   <span class="visualNoPrint">
+    <a class="discreet"
+     tal:attributes="href string:${context/@@plone_context_state/object_url}/@@images/image/large;">
     <img src="" alt="" tal:replace="structure context/search_icon.png" />
+    </a>
   </span>
 
   <span class="discreet visualNoPrint">

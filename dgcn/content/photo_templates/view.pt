@@ -7,6 +7,16 @@
  i18n:domain="dgcn.content">
 <body>
 
+<metal:title fill-slot="content-title">
+<h1 tal:content="context/title">My Title</h1>
+</metal:title>
+<div tal:condition="context/title_alt">
+  <span tal:replace="context/title_alt" />
+</div>
+<metal:description fill-slot="content-description">
+<div class="documentDescription" tal:content="context/description">Desc</div>
+</metal:description>
+
 <metal:content-core fill-slot="content-core">
   <metal:block define-macro="content-core">
 
@@ -38,26 +48,6 @@
 
 <fieldset>
 <legend i18n:translate="">Description</legend>
-<div>
-  <label style="font-size: 120%">Image ID</label>:
-  <span tal:replace="context/id" />
-  <tal:vcea condition="context/id_vcea">
-  <label style="font-size: 120%">ID at vcea.net</label>:
-  <span tal:replace="context/id_vcea" />
-  </tal:vcea>
-  <tal:ref condition="context/id_ref">
-  <label style="font-size: 120%">HPC Reference</label>:
-  <span tal:replace="context/id_ref" />
-  </tal:ref>
-</div>
-<div tal:condition="context/title">
-  <label i18n:translate="">Title</label>:
-  <span tal:replace="context/title" />
-</div>
-<div tal:condition="context/description">
-  <label i18n:translate="">Description</label>:
-  <span tal:replace="context/description" />
-</div>
 <div tal:condition="context/collection">
   <label i18n:translate="">Collection</label>:
   <span tal:replace="context/collection" />
@@ -82,20 +72,8 @@
   <label i18n:translate="">Photographer</label>:
   <span tal:replace="context/photographer" />
 </div>
-<div tal:condition="context/caption">
-  <label i18n:translate="">Caption</label>:
-  <span tal:replace="context/caption" />
-</div>
-<div tal:condition="context/cap_abm">
-  <label i18n:translate="">Caption in Album or on Mount</label>:
-  <span tal:replace="context/cap_abm" />
-</div>
-<div tal:condition="context/cap_img">
-  <label i18n:translate="">Caption on Original Image</label>:
-  <span tal:replace="context/cap_img" />
-</div>
 <div tal:condition="context/frmt_orig">
-  <label i18n:translate="">Original Format</label>:
+  <label i18n:translate="">Image Type</label>:
   <span tal:replace="context/frmt_orig" />
 </div>
 <div tal:condition="context/material">
@@ -106,11 +84,13 @@
   <label i18n:translate="">Note</label>:
   <span tal:replace="context/note" />
 </div>
-<div tal:condition="context/url">
-  <label i18n:translate="">URL</label>:
-  <a href="#"
-   tal:attributes="href context/url; target string:_blank"
-   tal:content="context/url">remote url</a>
+<div tal:condition="context/id_vcea">
+  <label i18n:translate="">ID at vcea.net</label>:
+  <span tal:replace="context/id_vcea" />
+</div>
+<div tal:condition="context/id_ref">
+  <label i18n:translate="">HPC Reference</label>:
+  <span tal:replace="context/id_ref" />
 </div>
 </fieldset>
 

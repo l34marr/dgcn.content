@@ -104,7 +104,7 @@ class IPhoto(form.Schema):
     )
 
     frmt_orig = schema.TextLine(
-        title=_(u"Original Format"),
+        title=_(u"Image Type"),
         required=False,
     )
 

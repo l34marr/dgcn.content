@@ -26,7 +26,7 @@ setup(name='dgcn.content',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity [grok]',
+          'plone.app.dexterity',
           'plone.namedfile [blobs]',
       ],
       entry_points="""

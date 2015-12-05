@@ -9,23 +9,24 @@
   <property name="description"
    i18n:translate="">Photo Type</property>
   <property name="icon_expr">string:${portal_url}/image_icon.png</property>
-  <property name="factory">dgcn.content.photo</property>
+  <property name="factory">Photo</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Photo</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allowed_content_types" />
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">dgcn.content.photo.IPhoto</property>
-  <property name="klass">dgcn.content.photo.Photo</property>
+  <property name="schema"></property>
+  <property name="klass">dgcn.content.content.Photo</property>
+  <property name="model_source"></property>
+  <property name="model_file">dgcn.content.models:photo.xml</property>
 
   <property name="behaviors">
     <element value="plone.app.dexterity.behaviors.filename.INameFromFileName" />
     <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
     <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-    <!-- IReferenceable might not be available, but it will not break. -->
-    <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
-   </property>
+  </property>
 
   <!-- View information -->
   <property name="link_target"></property>

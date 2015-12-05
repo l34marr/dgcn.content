@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<model i18n:domain="crgis.content"
+ xmlns="http://namespaces.plone.org/supermodel/schema"
+ xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+ xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+<schema>
+
+  <field name="id" type="zope.schema.TextLine">
+    <title i18n:translate="">Image ID</title>
+    <required>True</required>
+    <description />
+  </field>
+  <field name="id_vcea" type="zope.schema.TextLine">
+    <title i18n:translate="">ID at vcea.net</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="id_ref" type="zope.schema.TextLine">
+    <title i18n:translate="">HPC Reference</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="title" type="zope.schema.TextLine">
+    <title i18n:translate="">Title</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="title_alt" type="zope.schema.TextLine">
+    <title i18n:translate="">Alternative Title</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="description" type="zope.schema.Text">
+    <title i18n:translate="">Description</title>
+    <required>False</required>
+    <description />
+  </field>
+  <field name="image" type="plone.namedfile.field.NamedBlobImage"
+      marshal:primary="true">
+    <description />
+    <title i18n:translate="">Photo</title>
+  </field>
+  <field name="collection" type="zope.schema.TextLine">
+    <title i18n:translate="">Collection</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="coverage" type="zope.schema.TextLine">
+    <title i18n:translate="">Coverage</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="year" type="zope.schema.TextLine">
+    <title i18n:translate="">Year</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="date" type="zope.schema.TextLine">
+    <title i18n:translate="">Date</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="estimated" type="zope.schema.TextLine">
+    <title i18n:translate="">Estimated Date</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="photographer" type="zope.schema.TextLine">
+    <title i18n:translate="">Photographer</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="caption" type="zope.schema.TextLine">
+    <title i18n:translate="">Caption</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="cap_abm" type="zope.schema.TextLine">
+    <title i18n:translate="">Caption in Album or on Mount</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="cap_img" type="zope.schema.TextLine">
+    <title i18n:translate="">Caption on Original Image</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="frmt_orig" type="zope.schema.TextLine">
+    <title i18n:translate="">Original Format</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="material" type="zope.schema.TextLine">
+    <title i18n:translate="">Material Form of Image</title>
+    <required>Flase</required>
+    <description />
+  </field>
+  <field name="note" type="zope.schema.Text">
+    <title i18n:translate="">Note</title>
+    <required>False</required>
+    <description />
+  </field>
+  <field name="url" type="zope.schema.TextLine">
+    <title i18n:translate="">URL</title>
+    <required>Flase</required>
+    <description />
+  </field>
+
+</schema>
+
+</model>

@@ -1,0 +1,14 @@
+<configure i18n_domain="dgcn.content"
+ xmlns="http://namespaces.zope.org/zope"
+ xmlns:browser="http://namespaces.zope.org/browser"
+ xmlns:plone="http://namespaces.plone.org/plone"
+ xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <browser:page
+    name="view"
+    for="dgcn.content.content.IPhoto"
+    class=".view.MyView"
+    template="photo.pt"
+    permission="zope.Public" />
+
+</configure>
